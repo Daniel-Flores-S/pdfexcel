@@ -6,6 +6,7 @@ import org.apache.pdfbox.text.PDFTextStripper
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
@@ -13,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile
 import java.io.ByteArrayOutputStream
 
 @RestController
+@CrossOrigin(origins = ["*"], allowedHeaders = ["*"])
 class ConvertController {
     @PostMapping("/convert")
     fun convertPdfToExcel(@RequestParam("file") file: MultipartFile): ResponseEntity<ByteArray> {
