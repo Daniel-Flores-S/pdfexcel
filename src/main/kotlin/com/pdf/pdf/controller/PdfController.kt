@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile
 import java.io.ByteArrayOutputStream
 
 @RestController
-@CrossOrigin(origins = ["*"], allowedHeaders = ["*"])
+@CrossOrigin("*")
 class ConvertController {
     @PostMapping("/convert")
     fun convertPdfToExcel(@RequestParam("file") file: MultipartFile): ResponseEntity<ByteArray> {
